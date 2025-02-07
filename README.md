@@ -17,7 +17,7 @@
 
 **Демо:**
 
-[Здесь можно разместить ссылку на развернутый пример игры на GitHub Pages, Netlify, Vercel и т.д.]
+https://codepen.io/t_che/pen/dPbxpYx
 
 **Как играть:**
 
