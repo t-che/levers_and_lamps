@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.puzzle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#levers {
+    display: flex; /* Используем flex для горизонтального расположения */
+    justify-content: space-around; /* Равномерное распределение места */
+    align-items: center; /* Выравниваем элементы по вертикали в центре */
+    width: 100%;
+    flex-wrap: wrap; /* Для переноса на новую строку если элементов много*/
+}
+
+.lever-container {
+    display: flex;
+    flex-direction: column; /* Располагаем рычаг и индикатор вертикально */
+    align-items: center;
+    margin: 10px; /*  Отступы между рычагами */
+}
+
+.lever {
+        width: 40px;
+    height: 55px; /* увеличена высота */
+    margin: 10px 0;
+    background-color: #fff;
+     border: none; /* Убираем стандартную рамку */
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 3D-эффект */
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.1s, background-color 0.2s; /* плавный переход */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+ .lever:before {
+content: '';
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    height: 80%;
+    background: linear-gradient(to bottom, #ebe9e9, #efefef);
+    border-radius: 4px;
+
+     }
+    .lever:after {
+       content: '';
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       width: 15px;
+        height: 15px;
+        background: #777; /* Цвет стержня */
+       border-radius: 50%;
+        transform: translate(-50%, -50%);
+   }
+
+.lever:active {
+  background-color: #aaa; /* затемнение при нажатии */
+   transform: translateY(2px); /* небольшой сдвиг вниз */
+}
+
+
+
+
+.indicator {
+    width: 24px;
+    height: 32px;
+    border-radius: 50% 50% 58% 58% / 30% 30% 70% 70%;
+    background-color: #e0e0e0;
+    margin: 5px;
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 3px 2px 0px rgb(0 0 0 / 34%);
+}
+.indicator:before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 50%;
+    background: radial-gradient(circle at 50% 45%, rgb(255 255 255 / 77%), transparent);
+    border-radius: 50% 50% 32% 32% / 30% 30% 70% 70%;
+    pointer-events: none;
+}
+.indicator.on {
+    background-color: #edd003;
+}
+
+
+
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#reset-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#reset-btn:hover {
+    background-color: #666;
+}
